@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "font";
+    src: url(Lightdot-13x9.ttf);
+}
+
+@font-face {
+    font-family: "heading";
+    src: url(Doto-VariableFont_ROND\,wght.ttf);
+}
+
+:root {
+    --lightBlue: rgba(0, 149, 255, 0.845);
+    --light: rgba(113, 182, 232, 0.97);
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+}
+
+.main-wrapper {
+    box-shadow: 0 0 10px 2px var(--lightBlue);
+    border-radius: 20px;
+    padding: 1%;
+    width: 400px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading-box {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading-box h1 {
+    color: var(--lightBlue);
+    font-family: "heading";
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+
+/* display box */
+.display-box {
+    width: 100%;
+    height: 65%;
+}
+
+.display {
+    width: 100%;
+    height: 32%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+
+}
+
+.display h2 {
+    transition: 0.4s all ease-in-out;
+    display: flex;
+    width: 22%;
+    margin-left: 28%;
+    font-family: "font";
+    font-size: 3.5rem;
+    color: var(--lightBlue);
+    font-weight: normal;
+    justify-content: center;
+}
+
+.display span {
+    display: flex;
+    height: 100%;
+    width: 25%;
+    font-family: "font";
+    font-size: 1.5rem;
+    color: var(--light);
+    margin-bottom: 6px;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+/* button box */
+.btn-box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 20%;
+    gap: 30px;
+}
+
+#start {
+    cursor: pointer;
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    border: 2px solid var(--lightBlue);
+    font-size: 2rem;
+    color: white;
+    background-color: transparent;
+}
+
+#start i {
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+#end,
+#stop {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    color: var(--light);
+}
+
+@media (max-width:426px) {
+    .main-wrapper {
+        border-radius: 10px;
+        padding: 2%;
+        width: 94%;
+    }
+}
