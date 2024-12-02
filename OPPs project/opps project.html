@@ -1,0 +1,35 @@
+<script>
+
+    class User {
+        constructor(u_name, bank_n, branch, ifsc, total, history) {
+            this.name = u_name
+            this.bank = bank_n
+            this.branch = branch
+            this.ifsc = ifsc
+            this.total = total
+            this.bal_history = history
+        }
+
+        details() {
+            console.log(`Name : ${this.name}`)
+            console.log(`Bank name : ${this.bank}`)
+            console.log(`Branch : ${this.branch}`)
+            console.log(`IFSC code : ${this.ifsc}`)
+            console.log(`Total balance : ${this.total}`)
+        }
+        balance() {
+            console.log("Your total balance : " + this.total)
+        }
+        history() {
+
+            this.bal_history.forEach(val => {
+                console.log(`Date : ${val.date}  Amount : ${val.amount}, ${val.type}`)
+            });
+        }
+
+    }
+    let ramesh = new User("Ramesh", "PNB", "Amreli", "amr3650", 20000, [{ date: "21/9/2024", amount: 2000, type: "debit" }, { date: "2/1/2024", amount: 1650, type: "cedit" }, { date: "2/11/2023", amount: 1050, type: "cedit" }])
+    ramesh.history()
+    ramesh.balance()
+    ramesh.details()
+</script>
