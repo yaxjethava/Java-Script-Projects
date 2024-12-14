@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Create Your Time</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+    <header>
+        <nav id="navbar_large_devices">
+            <div class="logo">
+                Create Your Time
+            </div>
+            <ul>
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="card.html">Cart</a></li>
+                <li><a href="">Watches</a></li>
+                <li><a href="">Blog</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="icon-box">
+                    <span id="card-counts">0</span>
+                    <a href="card.html">
+                        <i class="fa-solid fa-cart-shopping"> </i>
+                    </a>
+                </div><a href="card.html"></a>
+                <div class="icon-box">
+                    <a href="card.html">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                </div>
+                <div class="icon-box">
+                    <a href="card.html">
+                        <i class="fa-solid fa-gear"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <!-- nav bar for mobile -->
+        <nav id="mobile-nav">
+            <div class="logo">
+                Your Time
+            </div>
+            <ul>
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="card.html">Cart</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="icon-box">
+                    <a href="card.html">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                </div>
+                <div class="icon-box">
+                    <a href="card.html">
+                        <i class="fa-solid fa-gear"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="card-parent-row">
+
+        <div class="card-heading">
+            <div class="card-product-info">
+                Product
+            </div>
+            <div class=" card-dtl">
+                Price
+            </div>
+            <div class=" card-dtl">
+                Quantity
+            </div>
+            <div class="card-dtl">
+                Total Price
+            </div>
+        </div>
+
+        <div class="parent-div-of-every-card">
+
+            <!-- <div class="singal-card-div">
+                <div class="card-product-img-title">
+                    <div class="product-card-small-img">
+                        <img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/j/a/jacob-co-bugatti-chiron-tb-bu200-40-aa-aa-bbrua-multiple-1.jpg"
+                            alt="product-img">
+                    </div>
+                    <div class="product-title">
+                        Luxury warches for you
+                    </div>
+                </div>
+                <div class="card-every-product-info">
+                    <p id="price-of-every-product-card">$20,000</span>
+                </div>
+
+                <div class="card-every-product-info">
+
+                    <div class="qtn-main-box-card">
+                        <div id="items-dicrice-btn">
+                            -
+                        </div>
+                        <div id="items-count-in-card">
+                            1
+                        </div>
+                        <div id="items-increas-btn">
+                            +
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-every-product-info">
+                    <div id="total-of-every-product">
+                        $20,000
+                    </div>
+                    <div id="remove-item-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="singal-card-div">
+                <div class="card-product-img-title">
+                    <div class="product-card-small-img">
+                        <img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/j/a/jacob-co-bugatti-chiron-tb-bu200-40-aa-aa-bbrua-multiple-1.jpg"
+                            alt="product-img">
+                    </div>
+                    <div class="product-title">
+                        Luxury warches for you
+                    </div>
+                </div>
+                <div class="card-every-product-info">
+                    <p id="price-of-every-product-card">$20,000</span>
+                </div>
+
+                <div class="card-every-product-info">
+
+                    <div class="qtn-main-box-card">
+                        <div id="items-dicrice-btn">
+                            -
+                        </div>
+                        <div id="items-count-in-card">
+                            1
+                        </div>
+                        <div id="items-increas-btn">
+                            +
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-every-product-info">
+                    <div id="total-of-every-product">
+                        $20,000
+                    </div>
+                    <div id="remove-item-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+
+    <script>
+
+        //data of card from local storage
+        let takes_data_lS = JSON.parse(localStorage.getItem("card_data"));//object
+        console.log(takes_data_lS)
+        let main_cart_row = document.querySelector(".parent-div-of-every-card")
+
+        card_maker(takes_data_lS);//render all cards
+
+        //function for formatting price in indian time
+        function priceFormate(priceNumber) {
+            const indianFormatter = new Intl.NumberFormat("en-IN");
+            return indianFormatter.format(priceNumber);
+        }
+
+
+        function increase(indexN, price) {
+            // take value of current quntity of items
+            let counts = count_every_item_card[indexN].innerText;
+
+            console.log(counts);
+            counts++;//increace numbers of quntity
+            console.log(counts);
+
+            //paachhu tej text ma append karvanu
+            count_every_item_card[indexN].innerText = counts;
+            total_every_item_card[indexN].innerText = `₹ ${priceFormate(counts * price)}`
+
+        }
+        function dicrease(indexN, price) {
+            let counts = count_every_item_card[indexN].innerText;
+           
+            if (counts > 1) {
+                // take value of current quntity of items
+                console.log(counts);
+                counts--;//dicreace numbers of quntity
+                console.log(counts);
+
+                //paachhu tej text ma append karvanu
+                count_every_item_card[indexN].innerText = counts;
+                total_every_item_card[indexN].innerText = `₹ ${priceFormate(counts * price)}`
+            }
+        }
+
+        function remove_card(index) {
+            takes_data_lS.splice(index, 1);
+            localStorage.setItem("card_data", JSON.stringify(takes_data_lS))//object send to local storage
+
+            //after deleting specific data card is render
+            card_maker(takes_data_lS)
+        }
+
+        //make cards using obj
+
+
+        let count_every_item_card = document.querySelectorAll("#items-count-in-card")
+        let total_every_item_card = document.querySelectorAll("#total-of-every-product")
+        let remove_btn_every_item_card = document.querySelectorAll("#remove-item-btn")
+
+        console.log(count_every_item_card);
+        console.log(total_every_item_card);
+        console.log(remove_btn_every_item_card);
+
+        // function for card making
+        function card_maker(object_name) {
+
+            main_cart_row.innerHTML = "";
+
+            object_name.forEach((data, i) => {
+
+                main_cart_row.innerHTML += `
+
+            <div class="singal-card-div">
+                <div class="card-product-img-title">
+                    <div class="product-card-small-img">
+                        <img src="${data.img}"
+                            alt="product-img">
+                    </div>
+                    <div class="product-title">
+                        ${data.title}
+                    </div>
+                </div>
+                <div class="card-every-product-info singal-price">
+                    <p id="price-of-every-product-card">&#x20B9; ${priceFormate(data.price)}</span>
+                </div>
+
+                <div class="card-every-product-info qnt-in-seperate-card">
+
+                    <div class="qtn-main-box-card">
+                        <div id="items-dicrice-btn" onclick="dicrease(${i},${data.price})">
+                            -
+                        </div>
+                        <div id="items-count-in-card">
+                            1
+                        </div>
+                        <div id="items-increas-btn" onclick="increase(${i},${data.price})">
+                            +
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-every-product-info final-price-rempve-btn">
+                    <div id="total-of-every-product">
+                        &#x20B9; ${priceFormate(data.price)}
+                    </div>
+                    <div id="remove-item-btn" onclick="remove_card(${i})">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </div>`
+            });
+        }
+
+    </script>
+</body>
+
+</html>
