@@ -64,14 +64,25 @@ obj.forEach(data => {
 
 function sendDataInArray(img, title, price) {
 
-    cardObj.push({ img, title, price });
-    // console.log(cardObj)
-    localStorage.setItem("card_data", JSON.stringify(cardObj))//object send to local storage
-    // console.log(JSON.parse(localStorage.getItem("card_data")))
-    let count = JSON.parse(localStorage.getItem("card_data"))//for getting value from local storage obj
-    // window.location.reload()
-    console.log(count.length)
+    //for cheaking if any same value is exist in our local storage object
+    let sameValue = cardObj.filter((value) => value.title === title);
 
-    count_of_navbar_small.textContent = count.length//for changing value of card on nav
-    count_of_navbar.textContent = count.length//for changing value of card on nav
+    console.log(sameValue)
+    console.log(`: same value`)
+
+    if (sameValue.length == 0) {
+        cardObj.push({ img, title, price });
+        console.log(cardObj)
+        localStorage.setItem("card_data", JSON.stringify(cardObj))//object send to local storage
+
+
+        let count = JSON.parse(localStorage.getItem("card_data"))//for getting value from local storage obj
+
+        count_of_navbar.textContent = count.length//for changing value of card on large nav
+        count_of_navbar_small.textContent = count.length//for changing value of card on mobile nav
+
+    } else {
+        console.log("same value is exist")
+    }
+
 }   
