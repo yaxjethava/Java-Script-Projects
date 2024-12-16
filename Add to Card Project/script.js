@@ -14,9 +14,9 @@ let obj = [
     new CardDetails("https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/j/a/jacob-co-astronomia-art-at102-40-aa-ub-a-multiple-2.jpg", "Jacob & Co. Astronomia Art India", 67800000),
     new CardDetails("https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/j/a/jacob-co-bugatti-chiron-tb-bu200-40-aa-aa-bbrua-multiple-1.jpg", "Bugatti Chiron Tourbillon White Gold", 41600000),
     new CardDetails("https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/g/i/girard-perregaux-bridges-99295-43-001-ba6a-large.jpg", "Girard-Perregaux Quasar Light Tourbillon", 36150000),
-    new CardDetails("https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/j/a/jacob-co-astronomia-regulator-ar200-40-aa-ac-abala-multiple-4.jpg", "Astronomia Tourbillon Regulator",  28800000),
+    new CardDetails("https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/j/a/jacob-co-astronomia-regulator-ar200-40-aa-ac-abala-multiple-4.jpg", "Astronomia Tourbillon Regulator", 28800000),
     new CardDetails("https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/b/v/bvlgari-octo-103283-large_1.jpg", "BVLGARI Octo Roma Carillon Tourbillon", 23980000),
-    new CardDetails("https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/h/-/h-moser-cie-streamliner-6804-0401-large.jpg", "H. Moser & Cie. Streamliner Tourbillon",  17500000),
+    new CardDetails("https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/h/-/h-moser-cie-streamliner-6804-0401-large.jpg", "H. Moser & Cie. Streamliner Tourbillon", 17500000),
     new CardDetails("https://content.thewosgroup.com/productimage/18100282/18100282_1.jpg?impolicy=zoom", "Brilliant Skeleton Northern Lights", 9700000),
     new CardDetails("https://img.tatacliq.com/images/i18//1316Wx1468H/MP000000016577285_1316Wx1468H_202406301655542.jpeg", "IWC Schaffhausen", 2128000),
     new CardDetails("https://static.helioswatchstore.com/media/catalog/product/v/e/vevk00620_1.jpg", "Versace", 95800),
@@ -41,7 +41,7 @@ function priceFormate(priceNumber) {
     return indianFormatter.format(priceNumber);
 }
 
-let cardObj = []
+let cardObj = JSON.parse(localStorage.getItem('card_data')) || []
 
 
 obj.forEach(data => {
@@ -74,4 +74,4 @@ function sendDataInArray(img, title, price) {
 
     count_of_navbar_small.textContent = count.length//for changing value of card on nav
     count_of_navbar.textContent = count.length//for changing value of card on nav
-}
+}   
