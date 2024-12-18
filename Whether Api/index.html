@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+
+        <div class="serach-bar-box">
+            <form id="input_form">
+                <input type="text" id="user_input" placeholder="City name">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+
+        <div class="details-wrapper">
+
+            <div class="name-celcius-dtl-box">
+                <h1 id="city">Amreli</h1>
+                <h1 id="temp">20&deg;</h1>
+                <div class="man-min-temp-box">
+                    <p>Max : <span id="max-temp">28&deg;</span></p>
+                    <p>Min : <span id="min-temp">13&deg;</span></p>
+                </div>
+            </div>
+
+            <div class="name-celcius-dtl-box">
+                <div class="icon-img-box">
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather_icon" height="120%"
+                        id="icon_img">
+                </div>
+                <p id="main_weather">Smoke</p>
+                <p id="cloud">Cloud : <span id="cloud_value">83%</span></p>
+
+            </div>
+        </div>
+
+        <div class="wind-feel-dtl-box">
+
+            <div class="dtl-mini-box">
+                <p><i class="fa-solid fa-temperature-half"></i>Real Feel</p>
+                <h2 id="real-feel">30&deg;</h2>
+            </div>
+            <div class="dtl-mini-box">
+                <p><i class="fa-solid fa-wind"></i> Wind</p>
+                <h2 id="wind-speed">3.3 km/h</h2>
+            </div>
+            <div class="dtl-mini-box">
+                <p><i class="fa-solid fa-droplet"></i>Humidity</p>
+                <h2 id="humidity">30%</h2>
+            </div>
+            <div class="dtl-mini-box">
+                <p><i class="fa-solid fa-umbrella"></i>Pressure</p>
+                <h2 id="pressure">1050Pa</h2>
+            </div>
+
+        </div>
+
+        <div class="other-city-dtl-box">
+
+            <div class="other-city">
+                <div class="other-city-icon-div">
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather_icon" height="120%"
+                        id="other_icon_img_1">
+                </div>
+                <h2 id="other-city-name-1">America</h2>
+                <h2 id="other-city-temp-1">26°C</h2>
+            </div>
+
+            <div class="other-city">
+                <div class="other-city-icon-div">
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather_icon" height="120%"
+                        id="other_icon_img_2">
+                </div>
+                <h2 id="other-city-name-2">America</h2>
+                <h2 id="other-city-temp-2">26°C</h2>
+            </div>
+
+            <div class="other-city">
+                <div class="other-city-icon-div">
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather_icon" height="120%"
+                        id="other_icon_img_3">
+                </div>
+                <h2 id="other-city-name-3">America</h2>
+                <h2 id="other-city-temp-3">26°C</h2>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
