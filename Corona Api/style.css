@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(249, 249, 249);
+}
+
+.main-parent-div {
+    gap: 7%;
+    width: 100%;
+    height: 98vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-main-div {
+    /* border: 1px solid black; */
+    box-shadow: 0 0 7px 0px rgb(140, 140, 140);
+    /* background-color: #ad1111; */
+    border-radius: 20px;
+    background: url(India-map-en.svg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 560px;
+    height: 650px;
+    display: flex;
+}
+
+.data-show-main-div {
+    animation: glowBtnBox 1.5s infinite;
+
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5%;
+    gap: 4%;
+    width: 390px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: rgb(222, 222, 222);
+}
+
+.data-show-main-div h1 {
+    text-align: center;
+    font-size: 1.7rem;
+    color: rgb(91, 91, 91);
+    margin-bottom: 3%;
+}
+
+.for-india-dtl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 40%;
+    background-color: #ffffff86;
+    border: 1px solid rgba(128, 128, 128, 0.694);
+    border-radius: 10px;
+}
+
+.for-india-dtl h2 {
+    font-size: 1.4rem;
+    color: rgba(0, 58, 159, 0.938);
+    font-weight: bold;
+}
+
+.for-india-dtl p {
+    color: rgba(0, 31, 189, 0.509);
+    font-weight: bold;
+}
+
+
+/* for transperent div and button */
+
+/* Tooltip styling */
+.btn::after {
+    z-index: 999;
+    content: attr(name); /* Use the data-tooltip attribute for the tooltip text */
+    position: absolute;
+    bottom: 120%; /* Position above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0; /* Initially hidden */
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    font-size: 14px;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    bottom: 110%; /* Just below the tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    opacity: 0; /* Initially hidden */
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+/* Show tooltip on hover */
+.btn:hover::after,
+.btn:hover::before {
+    z-index: 900;
+    opacity: 1;
+}
+
+.btn {
+    z-index: 100;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    animation: glowBtn 1.5s infinite;
+    background-color: rgb(82, 200, 255);
+    /* box-shadow: 0 0 6px 0 rgba(4, 217, 255, 0.872); */
+    border: none;
+    cursor: pointer;
+
+}
+
+@keyframes glowBtn {
+    0%{
+    box-shadow: 0 0 0px 0 #000000;
+    }
+    100%{
+    box-shadow: 0 0 13px 0 #0ddbfff5;
+    }
+}
+@keyframes glowBtnBox {
+    0%{
+    box-shadow: 0 0 0px 0 #ffffff;
+    }
+    100%{
+    box-shadow: 0 0 8px 0 #004ddc60;
+    }
+}
+
+.click-gujarat {
+    transform: translateY(325px) translateX(65px);
+}
+
+.click-rajsthan {
+    transform: translateY(258px) translateX(91.5px);
+}
+
+.click-madhyaPradesh {
+    transform: translateY(323.5px) translateX(174px);
+}
+
+.click-Maharashtra {
+    transform: translateY(402.5px) translateX(96px);
+}
+
+.click-Goa {
+    transform: translateY(470.5px) translateX(50px);
+}
+
+.click-Karnataka {
+    transform: translateY(507.5px) translateX(69px);
+}
+
+.click-Kerala {
+    transform: translateY(565.5px) translateX(65px);
+}
+.click-Lakshadweep {
+    transform: translateY(570.5px) translateX(-22px);
+}
+
+.click-TamilNadu {
+    transform: translateY(572.5px) translateX(75px);
+}
+
+.click-ANI {
+    transform: translateY(550.5px) translateX(344px);
+}
+
+.click-Puducherry {
+    transform: translateY(539.5px) translateX(76px);
+}
+.click-AndhraPradesh {
+    transform: translateY(463.5px) translateX(38px);
+}
+.click-Telangana {
+    transform: translateY(424.5px) translateX(30px);
+}
+.click-Odisha {
+    transform: translateY(375.5px) translateX(127px);
+}
+.click-Chhattisgarh {
+    transform: translateY(355.5px) translateX(59px);
+}
+.click-WestBengal {
+    transform: translateY(325.5px) translateX(157px);
+}
+.click-Jharkhand {
+    transform: translateY(306.5px) translateX(90px);
+}
+.click-Bihar {
+    transform: translateY(268.5px) translateX(82px);
+}
+.click-UttarPradesh {
+    transform: translateY(237.5px) translateX(-32px);
+}
+.click-Delhi {
+    transform: translateY(203.5px) translateX(-106px);
+}
+.click-Haryana {
+    transform: translateY(189.5px) translateX(-141px);
+}
+.click-Punjab {
+    transform: translateY(158.5px) translateX(-168px);
+}
+.click-Uttarakhand {
+    transform: translateY(174.5px) translateX(-112px);
+}
+.click-Chandigarh{
+    transform: translateY(151.5px) translateX(-170px);
+}
+.click-HimachalPradesh {
+    transform: translateY(108.5px) translateX(-183px);
+}
+.click-JammuKashmir {
+    transform: translateY(84.5px) translateX(-228px);
+}
+.click-Sikkim {
+    transform: translateY(218.5px) translateX(-5px);
+}
+.click-Assam {
+    transform: translateY(241.5px) translateX(59px);
+}
+.click-Meghalaya {
+    transform: translateY(250.5px) translateX(13px);
+}
+.click-Tripura {
+    transform: translateY(288.5px) translateX(11px);
+}
+.click-Mizoram {
+    transform: translateY(298.5px) translateX(20px);
+}
+.click-Manipur {
+    transform: translateY(264.5px) translateX(17px);
+}
+.click-Nagaland {
+    transform: translateY(232.5px) translateX(12px);
+}
+.click-ArunachalPradesh {
+    transform: translateY(193.5px) translateX(31px);
+}
+.click-Ladakh {
+    transform: translateY(56.5px) translateX(-304px);
+}
