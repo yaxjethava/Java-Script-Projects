@@ -23,15 +23,15 @@ async function coronaData() {
 async function coronaDtl(stateName) {
     let fetchApi = await fetch("https://api.rootnet.in/covid19-in/stats/latest");
     let result = await fetchApi.json()
-
+    console.log(result)
     let dataArray = result.data.regional;
-    
+
     let filterData = dataArray.filter(value => value.loc == stateName);
 
     state_name.textContent = filterData[0].loc
     state_case.textContent = filterData[0].confirmedCasesIndian
     state_deth.textContent = filterData[0].deaths
-    state_recovered.textContent = filterData[0].deaths
+    state_recovered.textContent = filterData[0].discharged
     // inden_=result.data
 }
 
