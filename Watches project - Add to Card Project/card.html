@@ -20,13 +20,13 @@
                 Create Your Time
             </div>
             <ul>
-                <li><a href="index.html" >Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="card.html">Cart</a></li>
                 <li><a href="">Watches</a></li>
                 <li><a href="">Blog</a></li>
             </ul>
             <div class="nav-icons">
-               
+
                 <div class="icon-box">
                     <a href="card.html">
                         <i class="fa-regular fa-user"></i>
@@ -45,7 +45,7 @@
                 Your Time
             </div>
             <ul>
-                <li><a href="index.html" >Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="card.html">Cart</a></li>
             </ul>
             <div class="nav-icons">
@@ -81,8 +81,9 @@
             </div>
         </div>
 
-        <div class="parent-div-of-every-card">
 
+        <!-- that contains all add to cards  -->
+        <div class="parent-div-of-every-card">
             <!-- <div class="singal-card-div">
                 <div class="card-product-img-title">
                     <div class="product-card-small-img">
@@ -162,10 +163,12 @@
                     </div>
                 </div>
             </div> -->
-
         </div>
+
     </div>
 
+
+    <!-- script for making Dynamic card from local storage and show it in this page -->
     <script>
 
         //data of card from local storage
@@ -197,7 +200,7 @@
         }
         function dicrease(indexN, price) {
             let counts = count_every_item_card[indexN].innerText;
-           
+
             if (counts > 1) {
                 // take value of current quntity of items
                 console.log(counts);
