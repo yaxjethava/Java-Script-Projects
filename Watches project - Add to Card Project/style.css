@@ -151,7 +151,12 @@ nav ul li a:hover {
     height: 100%;
     width: 100%;
 }
-
+#hero-img-1{
+    display: block;
+}
+#hero-img-2{
+    display: none;
+}
 /* for main row of cards */
 #main-row {
     display: flex;
@@ -398,11 +403,19 @@ nav ul li a:hover {
     font-size: 1rem;
     color: white;
 }
-
+@media (max-width:768px) {
+    #hero-img-1{
+        display: none;
+    }
+    #hero-img-2{
+        display: block;
+    }
+    
+}
 @media (max-width: 480px) {
 
     /* for nav bar */
-    #mobile-nav {
+    #mobile-nav {padding: 5% 0;
         display: flex;
     }
 
@@ -410,6 +423,13 @@ nav ul li a:hover {
         display: none;
     }
 
+    /* for hero section */
+    .hero-section {
+        width: 100%;
+        height: 250px;
+        margin: 5% 0;
+    }
+  
     /* for product cards  */
     .cont {
         max-width: 100%;
@@ -438,10 +458,11 @@ nav ul li a:hover {
     }
 
     /*///////// for card page //////// */
-    .card-parent-row{
+    .card-parent-row {
         padding: 1% 1.5%;
-        width:97%;
+        width: 97%;
     }
+
     .card-heading {
         display: none;
     }
@@ -470,7 +491,8 @@ nav ul li a:hover {
         gap: 8px;
         width: 30%;
     }
-    .final-price-rempve-btn{
+
+    .final-price-rempve-btn {
         gap: 5px;
         width: 35%;
     }
