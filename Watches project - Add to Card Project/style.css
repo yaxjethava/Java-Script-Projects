@@ -251,8 +251,6 @@ nav ul li a:hover {
     background-color: #282828;
 }
 
-
-
 /* for card page  */
 .card-parent-row {
     box-shadow: 0 0 10px 0 rgb(224, 224, 224);
@@ -403,6 +401,9 @@ nav ul li a:hover {
     font-size: 1rem;
     color: white;
 }
+
+
+/* for table devices */
 @media (max-width:768px) {
     #hero-img-1{
         display: none;
@@ -412,6 +413,8 @@ nav ul li a:hover {
     }
     
 }
+
+/* for small devices and mobile */
 @media (max-width: 480px) {
 
     /* for nav bar */
